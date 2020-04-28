@@ -1,0 +1,66 @@
+.filter {
+  display: inline-block;
+  padding: 0 10px;
+  color: $text;
+  border: 2px solid;
+  border-radius: 12px;
+  user-select: none;
+  transition: all 0.3s;
+
+  &.tag {
+    border-color: $blue;
+    &:hover {
+      background-color: $light-blue;
+    }
+  }
+
+  &.role {
+    border-color: $orange;
+    &:hover {
+      background-color: $light-orange;
+    }
+  }
+
+  &.type {
+    border-color: $purple;
+    &:hover {
+      background-color: $light-purple;
+    }
+  }
+
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  &.active.tag {
+    color: $white;
+    background-color: $blue;
+  }
+
+  &.active.role {
+    color: $white;
+    background-color: $orange;
+  }
+
+  &.active.type {
+    color: $white;
+    background-color: $purple;
+  }
+
+  &.clickable {
+    cursor: pointer;
+  }
+
+  .name {
+    font-size: 14px;
+  }
+
+  .separator {
+    padding: 0 5px;
+    color: $gray-border;
+  }
+
+  .count {
+    font-size: 14px;
+  }
+}
