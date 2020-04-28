@@ -1,6 +1,6 @@
 # focus-storefront
 
-Template for react+redux typescript e-commercial project. 
+Storefront template for react+redux typescript e-commercial project. 
 
 ```bash
     npm run install
