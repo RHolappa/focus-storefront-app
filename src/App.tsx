@@ -1,5 +1,7 @@
 import * as React from "react";
 import ImageModal from "./components/ImageModal";
+//import * as classNames from 'classnames';
+
 // import { } from './content/contents';
 
 //import * as _ from 'lodash';
@@ -19,10 +21,19 @@ class App extends  React.Component<AppProps, AppState> {
       showImage: '',
     };
   }
+
+  private showImage = (event: any) => {
+    this.setState({ showImage: event.target.getAttribute('data-img') });
+  }
+
   private hideImage = () => {
     this.setState({ showImage: '' });
   }
+
   public render() {
+    const { showImage } = this.state;
+
+    const imageName = 'app.png';
 
     return (
       <div className="app container-fluid">
@@ -32,16 +43,26 @@ class App extends  React.Component<AppProps, AppState> {
           </div>
         </header>
         <div className="app-container">
-        <ImageModal imagePath={`./images/`} hideImage={this.hideImage} />
 
 
         </div>
         <div className="row justify-content-center">
-          <div className="col col-lg-10 col-xl-8"></div>
+          <div className="col col-lg-10 col-xl-8">
+          <img
+              //className={classNames({ 'keep-original-size': true })}
+              src={`./images/${imageName}`}
+              alt="logo"
+              data-img={imageName}
+              onClick={this.showImage}
+            />
+          </div>
         </div>
         <div className="row justify-content-center">
           <footer className="app-footer col"></footer>
         </div>
+        {showImage !== '' &&
+            <ImageModal imagePath={`./images/${showImage}`} hideImage={this.hideImage} />
+          }
       </div>
     );
   }
