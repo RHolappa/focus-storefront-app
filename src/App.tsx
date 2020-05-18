@@ -1,10 +1,5 @@
 import * as React from "react";
 import ImageModal from "./components/ImageModal";
-//import * as classNames from 'classnames';
-
-// import { } from './content/contents';
-
-//import * as _ from 'lodash';
 
 interface AppState {
   showImage: string;
